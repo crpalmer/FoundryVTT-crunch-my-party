@@ -686,7 +686,7 @@ export class PartyCruncher {
                     .sound().file(audioPath)
                     .play();
             }
-        } else if (audioPath) // Play audio without JB2A && AA
+        } else if (audioPath && audioPath != Config.NO_AUDIO_FILE) // Play audio without JB2A && AA
         {
             AudioHelper.play({
                 src: audioPath,
@@ -806,7 +806,7 @@ export class PartyCruncher {
                     .sound().file(audioPath)
                     .play();
             }
-        } else if (audioPath) // Play audio without JB2A && AA
+        } else if (audioPath && audioPath != Config.NO_AUDIO_FILE) // Play audio without JB2A && AA
         {
             AudioHelper.play({
                 src: audioPath,
