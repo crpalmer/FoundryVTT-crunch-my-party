@@ -851,7 +851,7 @@ export class PartyCruncher {
                 let targetY = tokenDoc.y + relative.y * gridSize;
 
                 // Snap to nearest grid
-                const snapped = canvas.grid.getSnappedPosition(targetX, targetY, 0);
+                const snapped = canvas.grid.getSnappedPoint({x: targetX, y: targetY });
                 targetX = snapped.x;
                 targetY = snapped.y;
 
@@ -877,9 +877,9 @@ export class PartyCruncher {
                         break; // stop BEFORE wall
                     }
 
-                    const snappedStep = canvas.grid.getSnappedPosition(stepX, stepY, 0);
-                    finalX = snappedStep.x;
-                    finalY = snappedStep.y;
+		    const snappedStep = canvas.grid.getSnappedPoint({ x: stepX, y: stepY });
+		    finalX = snappedStep.x;
+		    finalY = snappedStep.y;
                 }
 
                 await tokenDoc.move(
